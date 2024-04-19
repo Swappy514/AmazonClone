@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="Sign-In.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <img src="Amazon-Logo.png" alt="Amazon Logo">
+    </div>
+    <form action="Dashboard.html" id="signInForm">
+        <h1>Sign in</h1>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+        
+        <a href="next_page.html?email=" class="continue-button">Continue</a><br><br>
+
+        <p>By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+        <details>
+            <summary class="help">
+                <span>
+                    <a href="#help" class="links">Need help?</a>
+                </span>
+            </summary>
+            <div id="morehelp">
+                <a href="#" id="help" class="links">Forgot Password</a><br>
+                <a href="#" id="help" class="links">Other issue with Sign-in</a>
+            </div>
+        </details>
+        <hr>
+        <p>Buying for work?</p>
+            <a href="#">Shop on Amazon Business</a>
+    </form>
+    
+        <div class="new">
+            <p>New to Amazon? </p>
+            <button class="buttonnext">
+                <a href="CreateAccount.html">Create your Amazon account</a>
+            </button>
+        </div>
+        <hr>
+        <footer>
+            <div class="footerlist">
+                <span>
+                    <a href="#" class="links">Condition of Use </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <a href="#" class="links">Privacy Notice </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <a href="#" class="links">Help </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </div>
+            <span>&copy;1996-2021, Amazon.com, Inc. or its affiliates</span>
+        </footer>
+    
+    <script src="Sign-in.js"></script>
+</body>
+</html>

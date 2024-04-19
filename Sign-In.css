@@ -1,0 +1,116 @@
+/* Style for the sign-in page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 150px; 
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.continue-button {
+    display: inline-block;
+    background-color: orange;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 87%; 
+    text-align: center; 
+}
+
+.continue-button:hover {
+    background-color: #e68a00;
+}
+
+.continue-button:active {
+    transform: translateY(2px);
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+.new {
+    text-align: center;
+}
+.buttonnext {
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 425px;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 15px;
+
+}
+
+.buttonnext:hover {
+
+    background-color: rgb(219, 222, 223);
+    cursor: pointer;
+
+}
+
+footer {
+    font-size: 13px;
+    text-align: center;
+}
+
+.footerlist {
+    padding: 20px;
+}
+
+hr.linehr {
+    width: 700px;
+    border-top: 1px solid rgb(218, 213, 213);
+
+}
+
+hr {
+    width: 400px;
+    border-top: 1px solid rgb(226, 219, 219);
+}
