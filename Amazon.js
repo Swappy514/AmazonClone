@@ -1,101 +1,62 @@
-// horizontal slider 1
-document.querySelector('.l-btn').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide').scrollLeft -= 1100;
-    event.preventDefault();
-})
-// The Element.scrollLeft property gets or sets the number of pixels that an element's content is scrolled from its left edge.
-document.querySelector('.r-btn').addEventListener('click',(event)=>{
-        document.querySelector('.product-slide').scrollLeft += 1100;
-        event.preventDefault();
-})
+// Sidebar functionality
+const sidebar = document.querySelector(".sidebar");
+const closeSidebar = document.querySelector(".fa-xmark");
+const blackOverlay = document.querySelector(".black");
+const allButton = document.querySelector(".second-1");
 
-
-
-
-// horizontal slider 2
-document.querySelector('.l-btn2').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide2').scrollLeft -= 1100;
-    event.preventDefault();
-})
-document.querySelector('.r-btn2').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide2').scrollLeft += 1100;
-    event.preventDefault();
-})
-
-
-
-
-// horizontal slider 3
-document.querySelector('.l-btn3').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide3').scrollLeft -= 1100;
-    event.preventDefault();
-})
-document.querySelector('.r-btn3').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide3').scrollLeft += 1100;
-    event.preventDefault();
-})
-
-
-
-// horizontal slider 4
-document.querySelector('.l-btn4').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide4').scrollLeft -= 1100;
-    event.preventDefault();
-})
-document.querySelector('.r-btn4').addEventListener('click',(event)=>{
-    document.querySelector('.product-slide4').scrollLeft += 1100;
-    event.preventDefault();
-})
-
-
-
-
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("backtotop").style.display = "block";
-    } else {
-        document.getElementById("backtotop").style.display = "none";
-    }
-}
-
-document.getElementById("backtotop").addEventListener("click", function() {
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+allButton.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    closeSidebar.classList.add("active");
+    blackOverlay.classList.add("active");
+    document.body.classList.add("stop-scroll");
 });
 
+closeSidebar.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    closeSidebar.classList.remove("active");
+    blackOverlay.classList.remove("active");
+    document.body.classList.remove("stop-scroll");
+});
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+// horizontal slider 1
+// Function to handle horizontal scrolling
+function handleScroll(selector, distance, event) {
+    document.querySelector(selector).scrollLeft += distance;
+    event.preventDefault();
+}
+
+// Adding event listeners for all horizontal sliders
+const sliders = [
+    { left: '.l-btn', right: '.r-btn', slide: '.product-slide' },
+    { left: '.l-btn2', right: '.r-btn2', slide: '.product-slide2' },
+    { left: '.l-btn3', right: '.r-btn3', slide: '.product-slide3' },
+    { left: '.l-btn4', right: '.r-btn4', slide: '.product-slide4' }
+];
+
+sliders.forEach(slider => {
+    document.querySelector(slider.left).addEventListener('click', (event) => {
+        handleScroll(slider.slide, -1100, event);
+    });
+
+    document.querySelector(slider.right).addEventListener('click', (event) => {
+        handleScroll(slider.slide, 1100, event);
+    });
+});
+
+// Back to top button functionality
+window.onscroll = function() {
+    scrollFunction();
+};
 
 function scrollFunction() {
+    const backToTopButton = document.getElementById("back-to-top");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backtotop.style.display = "block";
+        backToTopButton.style.display = "block";
     } else {
-        backtotop.style.display = "none";
+        backToTopButton.style.display = "none";
     }
 }
 
-
-
-
-
-// sidebar functionality
-const sidebar = document.querySelector(".sidebar");
-const closesidebar= document.querySelector(".fa-xmark");
-const black= document.querySelector(".black");
-const allbutton=document.querySelector(".second-1");
-
-allbutton.addEventListener("click",()=>{
-    sidebar.classList.add("active");
-    closesidebar.classList.add("active");
-    black.classList.add("active");
-    document.body.classList.add("stop-scroll")
-})
-closesidebar.addEventListener("click",()=>{
-    sidebar.classList.remove("active");
-    closesidebar.classList.remove("active");
-    black.classList.remove("active");
-    document.body.classList.remove("stop-scroll")
-})
+document.getElementById("back-to-top").addEventListener("click", function() {
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
